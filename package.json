@@ -1,0 +1,32 @@
+{
+    "name": "honpery-com-graphql-api",
+    "description": "",
+    "version": "0.0.1",
+    "main": "index.js",
+    "devDependencies": {
+        "@types/node": "^8.0.26",
+        "tslint": "^5.7.0",
+        "typescript": "^2.4.2"
+    },
+    "scripts": {
+        "dev": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/honpery-com/graphql-api.git"
+    },
+    "keywords": [],
+    "private": true,
+    "author": "honpery <honpery@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/honpery-com/graphql-api/issues"
+    },
+    "homepage": "https://github.com/honpery-com/graphql-api#readme",
+    "dependencies": {
+        "happy-graphql": "^0.0.1",
+        "koa": "^2.3.0",
+        "koa-bodyparser": "^4.2.0",
+        "koa-router": "^7.2.1"
+    }
+}
