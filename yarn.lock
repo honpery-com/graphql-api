@@ -2,7 +2,13 @@
 # yarn lockfile v1
 
 
-"@types/node@^8.0.26":
+"@types/node-fetch@^1.6.7":
+  version "1.6.7"
+  resolved "https://registry.npmjs.org/@types/node-fetch/-/node-fetch-1.6.7.tgz#521078e8f0c69a158e5022005aca92d2620f6d57"
+  dependencies:
+    "@types/node" "*"
+
+"@types/node@*", "@types/node@^8.0.26":
   version "8.0.26"
   resolved "https://registry.npmjs.org/@types/node/-/node-8.0.26.tgz#4d58be925306fd22b1141085535a0268b8beb189"
 
@@ -345,6 +351,10 @@ ms@2.0.0:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+node-fetch@next:
+  version "2.0.0-alpha.8"
+  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.0.0-alpha.8.tgz#f586cf6730ce30431c7d4528ce561d81add8ba90"
 
 on-finished@^2.1.0:
   version "2.3.0"

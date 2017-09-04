@@ -1,41 +1,42 @@
 import { Tag, TagId } from '../types';
 import { BaseAPI } from './common';
 
-export class TagAPI extends BaseAPI<Tag> {
+export class TagAPI extends BaseAPI {
 
-    public static list(conditions: any) {
-        return this.http.list({
+    static list(conditions: any) {
+        return this.http.list<Tag>({
             api: this.apis.core.tag,
             query: conditions,
         });
     }
 
-    public static detail(_id: TagId) {
-        return this.http.detail({
+    static detail(_id: TagId) {
+        return this.http.detail<Tag>({
             api: this.apis.core.tag,
             params: [_id],
         });
     }
 
-    public static create(new_tag: Tag) {
-        return this.http.create({
+    static create(new_tag: Tag) {
+        return this.http.create<Tag>({
             api: this.apis.core.tag,
             body: new_tag,
         });
     }
 
-    public static update(_id: TagId, new_tag: Tag) {
-        return this.http.update({
+    static update(_id: TagId, new_tag: Tag) {
+        return this.http.update<Tag>({
             api: this.apis.core.tag,
             params: [_id],
             body: new_tag,
         });
     }
 
-    public static delete(_id: TagId) {
-        return this.http.delete({
+    static delete(_id: TagId) {
+        return this.http.delete<Tag>({
             api: this.apis.core.tag,
             params: [_id],
         });
     }
+
 }

@@ -1,9 +1,11 @@
+import fetch from 'node-fetch';
 import { Env } from '../config';
-import { API, Body, Headers, Params, Query } from './types';
+import { ApiConfig } from '../config';
+import { Body, Headers, Params, Query } from './types';
 import { Url } from './url';
 
 interface FetchOptions {
-    api: API;
+    api: ApiConfig;
     params?: Params;
     query?: Query;
     body?: Body;
@@ -17,7 +19,7 @@ interface HttpOptions {
 
 export type Method = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
-export class Http<T> {
+export class Http {
 
     private _options: HttpOptions;
 
@@ -25,27 +27,27 @@ export class Http<T> {
         this._options = options;
     }
 
-    public list(options: FetchOptions) {
-        return this.buildMethod({ ...options, method: 'GET' });
+    list<T>(options: FetchOptions) {
+        return this.buildMethod<T>('GET', options);
     }
 
-    public detail(options: FetchOptions) {
-        return this.buildMethod({ ...options, method: 'GET' });
+    detail<T>(options: FetchOptions) {
+        return this.buildMethod<T>('GET', options);
     }
 
-    public create(options: FetchOptions) {
-        return this.buildMethod({ ...options, method: 'POST' });
+    create<T>(options: FetchOptions) {
+        return this.buildMethod<T>('POST', options);
     }
 
-    public update(options: FetchOptions) {
-        return this.buildMethod({ ...options, method: 'PATCH' });
+    update<T>(options: FetchOptions) {
+        return this.buildMethod<T>('PATCH', options);
     }
 
-    public delete(options: FetchOptions) {
-        return this.buildMethod({ ...options, method: 'DELETE' });
+    delete<T>(options: FetchOptions) {
+        return this.buildMethod<T>('DELETE', options);
     }
 
-    private buildMethod(options: FetchOptions & { method: Method }) {
-        const { method, api, params, query, body, headers } = options;
+    private buildMethod<T>(method: Method, options: FetchOptions) {
+        const { api, params, query, body, headers } = options;
     }
 }

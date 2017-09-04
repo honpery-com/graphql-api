@@ -1,39 +1,39 @@
 import { Category, CategoryId } from '../types';
 import { BaseAPI } from './common';
 
-export class CategoryAPI extends BaseAPI<Category> {
+export class CategoryAPI extends BaseAPI {
 
-    public static list(conditions: any) {
-        return this.http.list({
+    static list(conditions: any) {
+        return this.http.list<Category>({
             api: this.apis.core.category,
             query: conditions,
         });
     }
 
-    public static detail(_id: CategoryId) {
-        return this.http.detail({
+    static detail(_id: CategoryId) {
+        return this.http.detail<Category>({
             api: this.apis.core.category,
             params: [_id],
         });
     }
 
-    public static create(new_category: Category) {
-        return this.http.create({
+    static create(new_category: Category) {
+        return this.http.create<Category>({
             api: this.apis.core.category,
             body: new_category,
         });
     }
 
-    public static update(_id: CategoryId, new_category: Category) {
-        return this.http.update({
+    static update(_id: CategoryId, new_category: Category) {
+        return this.http.update<Category>({
             api: this.apis.core.category,
             params: [_id],
             body: new_category,
         });
     }
 
-    public static delete(_id: CategoryId) {
-        return this.http.delete({
+    static delete(_id: CategoryId) {
+        return this.http.delete<Category>({
             api: this.apis.core.category,
             params: [_id],
         });

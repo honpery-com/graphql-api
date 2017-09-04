@@ -8,7 +8,8 @@
         "object-literal-sort-keys": false,
         "quotemark": false,
         "interface-name": ["never-prefix"],
-        "variable-name": ["allow-leading-underscore"]
+        "variable-name": ["allow-leading-underscore"],
+        "member-access": ["no-public"]
     },
     "rulesDirectory": []
 }

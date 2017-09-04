@@ -1,39 +1,39 @@
 import { User, UserId } from '../types';
 import { BaseAPI } from './common';
 
-export class UserAPI extends BaseAPI<User> {
+export class UserAPI extends BaseAPI {
 
-    public static list(conditions: any) {
-        return this.http.list({
+    static list(conditions: any) {
+        return this.http.list<User>({
             api: this.apis.core.user,
             query: conditions,
         });
     }
 
-    public static detail(_id: UserId) {
-        return this.http.detail({
+    static detail(_id: UserId) {
+        return this.http.detail<User>({
             api: this.apis.core.user,
             params: [_id],
         });
     }
 
-    public static create(new_user: User) {
-        return this.http.create({
+    static create(new_user: User) {
+        return this.http.create<User>({
             api: this.apis.core.user,
             body: new_user,
         });
     }
 
-    public static update(_id: UserId, new_user: User) {
-        return this.http.update({
+    static update(_id: UserId, new_user: User) {
+        return this.http.update<User>({
             api: this.apis.core.user,
             params: [_id],
             body: new_user,
         });
     }
 
-    public static delete(_id: UserId) {
-        return this.http.delete({
+    static delete(_id: UserId) {
+        return this.http.delete<User>({
             api: this.apis.core.user,
             params: [_id],
         });
