@@ -1,4 +1,4 @@
-import { ObjectId, TimeLine } from './common';
+import { ObjectId, Time } from './common';
 
 export type TagId = ObjectId;
 
@@ -8,5 +8,7 @@ export interface Tag {
     _id?: TagId;
     name?: string;
     desc?: string;
-    timeline?: Array<TimeLine<TagStatus>>;
+    status?: TagStatus;
+    create_at?: Time;
+    update_at?: Time;
 }

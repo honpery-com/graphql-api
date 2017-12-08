@@ -1,5 +1,5 @@
-import { User } from '../types';
-import { BaseAPI } from './common';
+import { BaseAPI } from './_base';
+import { User } from './_types';
 
 export interface NewUser {
     username: string;
@@ -9,14 +9,14 @@ export interface NewUser {
 
 export class AuthAPI extends BaseAPI {
     static login(username: string, password: string) {
-        return this.http.create<User>({
+        return this.http.post<User>({
             api: this.apis.auth.login,
             body: { username, password },
         });
     }
 
     static register(newUser: NewUser) {
-        return this.http.create<User>({
+        return this.http.post<User>({
             api: this.apis.auth.register,
             body: newUser,
         });

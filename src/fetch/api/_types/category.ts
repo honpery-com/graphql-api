@@ -1,4 +1,4 @@
-import { ObjectId, TimeLine } from './common';
+import { ObjectId, Time } from './common';
 
 export type CategoryId = ObjectId;
 
@@ -8,5 +8,7 @@ export interface Category {
     _id?: CategoryId;
     name?: string;
     desc?: string;
-    timeline?: Array<TimeLine<CategoryStatus>>;
+    status?: CategoryStatus;
+    create_at?: Time;
+    update_at?: Time;
 }

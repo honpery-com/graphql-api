@@ -1,4 +1,4 @@
-import { ObjectId, TimeLine } from './common';
+import { ObjectId, Time } from './common';
 
 export type UserId = ObjectId;
 
@@ -10,5 +10,7 @@ export interface User {
     username?: string;
     password?: string;
     site?: string;
-    timeline?: Array<TimeLine<UserStatus>>;
+    status?: UserStatus;
+    create_at?: Time;
+    update_at?: Time;
 }

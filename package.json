@@ -1,5 +1,5 @@
 {
-    "name": "honpery-com-graphql-api",
+    "name": "@honpery-com/graphql-api",
     "description": "",
     "version": "0.0.1",
     "main": "index.js",
@@ -29,6 +29,6 @@
         "koa": "^2.3.0",
         "koa-bodyparser": "^4.2.0",
         "koa-router": "^7.2.1",
-        "node-fetch": "next"
+        "xhttp-js": "^0.0.2"
     }
 }

@@ -1,17 +1,4 @@
-import { Headers, Query } from '../common';
-
-export type Env = 'local' | 'test' | 'production';
-
-export interface ApiConfig {
-    api: string;
-    desc: string;
-    headers?: Headers;
-    query?: Query;
-}
-
-export interface ApiConfigGroup {
-    [name: string]: ApiConfig;
-}
+import { ApiConfig } from 'xhttp-js';
 
 export const APIs = {
     core: {
@@ -44,19 +31,11 @@ export const APIs = {
     },
 };
 
-type ServerEnv = {
-    [env in Env]: string;
-};
-
-interface ServerConfig extends ServerEnv {
-    apis: ApiConfig[] | ApiConfigGroup[];
-}
-
-export const SERVERs: ServerConfig[] = [
+export const SERVERs = [
     {
         local: 'http://localhost:9000',
         test: 'http://localhost:9000',
-        production: 'httpL//localhost:9000',
+        production: 'http://localhost:9000',
         apis: [
             APIs.core,
             APIs.auth,
